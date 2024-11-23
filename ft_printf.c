@@ -6,8 +6,10 @@ static void	check(va_list args, char c, int *len)
 	
 	if (c == 's')
 		print_string(args, len);
-	if (c == 'd')
+	if (c == 'd' || c == 'i')
 		print_numbers(args, len);
+	if (c == 'u')
+		print_numbers_u(args, len);
 	if(c == 'c')
 		print_charcater(args, len);
 }
@@ -31,9 +33,27 @@ static void print_numbers(va_list args, int *len)
 {
     int n = va_arg(args, int);
     ft_putnbr_fd(n, 1);
-
+	if (n < 0)
+	{
+		n = n * -1;
+		(*len)++;
+	}
+	while (n > 0)
+	{
+		(*len)++;
+		n = n / 10;
+	}
 }
-
+static void print_numbers_u(va_list args, int *len)
+{
+	unsigned int n = va_arg(args, int);
+    unsigned_int(n, 1);
+	while (n > 0)
+	{
+		(*len)++;
+		n = n / 10;
+	}
+}
 int ft_printf(const char *format, ...) 
 {
     int len;

@@ -14,5 +14,6 @@ static void	check(va_list args, char c, int *len);
 static void print_string(va_list args, int *len);
 static void print_numbers(va_list args, int *len);
 static void print_charcater(va_list args, int *len);
-
+static void print_numbers_u(va_list args, int *len);
+void	unsigned_int(unsigned int n, int fd);
 #endif
