@@ -18,7 +18,7 @@ static void print_charcater(va_list args, int *len)
 {
 	char c = (char )va_arg(args, int);
 	ft_putchar_fd(c, 1);
-	(*len)++;
+	*len += 1;
 }
 static void print_string(va_list args, int *len)
 {
@@ -36,11 +36,14 @@ static void print_numbers(va_list args, int *len)
 	if (n < 0)
 	{
 		n = n * -1;
-		(*len)++;
+		*len += 1;
 	}
+	if (n == 0)
+		*len += 1;
+
 	while (n > 0)
 	{
-		(*len)++;
+		*len += 1;
 		n = n / 10;
 	}
 }
@@ -48,9 +51,11 @@ static void print_numbers_u(va_list args, int *len)
 {
 	unsigned int n = va_arg(args, int);
     unsigned_int(n, 1);
+	if (n == 0)
+		*len += 1;
 	while (n > 0)
 	{
-		(*len)++;
+		*len += 1;
 		n = n / 10;
 	}
 }
