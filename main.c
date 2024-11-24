@@ -6,12 +6,11 @@ int main()
 {
     char *str = "ayoub";
     char *st = "hihi";
-    int a = 0;
-    char c = 'a';
-    //ft_printf("%s", str);
-    //printf("\n");
-    //int u = ft_printf("%s\n%d\n%s\n%c", str, a, st, c);
-    int u = printf("%s\n%d\n%s\n%c", str, a, st, c);
-    printf("\n%d", u);
+    int a = 110;
+    char c = 'A';
+
+    //int i = ft_printf("%d %c %s",a, c, str);
+    int i = printf("%x", a);
+    printf("\n%d", i);
     return 0;
 }

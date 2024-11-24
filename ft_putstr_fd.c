@@ -12,16 +12,19 @@
 
 #include "header.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
+	int len;
 
+	len = 0;
 	i = 0;
 	if (s == NULL)
-		return ;
+		return 0;
 	while (s[i] != '\0')
 	{
-		write(fd, &s[i], 1);
+		len += write(fd, &s[i], 1);
 		i++;
 	}
+	return (len);
 }
