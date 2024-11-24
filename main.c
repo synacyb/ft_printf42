@@ -6,11 +6,13 @@ int main()
 {
     char *str = "ayoub";
     char *st = "hihi";
-    int a = 110;
-    char c = 'A';
+    int a = -42;
+    char c = '*';
 
     //int i = ft_printf("%d %c %s",a, c, str);
-    int i = printf("%x", a);
-    printf("\n%d", i);
+    //int i = ft_printf("%x", a);
+    unsigned int pos = -42;
+
+    printf("\n%u", a);
     return 0;
 }

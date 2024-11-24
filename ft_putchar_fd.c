@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayadouay <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 09:54:00 by ayadouay          #+#    #+#             */
-/*   Updated: 2024/11/08 09:54:06 by ayadouay         ###   ########.fr       */
+/*   Updated: 2024/11/24 18:17:09 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 int	ft_putchar_fd(char c, int fd)
 {
-	int len;
-
-	len = 0;
-	len += write(fd, &c, 1);
-	return (len);
+	return (write(fd, &c, 1));
 }

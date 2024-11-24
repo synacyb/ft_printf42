@@ -14,6 +14,8 @@ int check_character(char c, va_list args)
 		len += unsigned_int(va_arg(args, unsigned int), 1);
 	else if (c == 's')
 		len += ft_putstr_fd(va_arg(args, char *), 1);
+	else if (c == 'x')
+		len += puthxs_lower(va_arg(args, unsigned int), 1);
 	else if (c == '%')
 		len += write(1, "%", 1);
 	return (len);

@@ -22,7 +22,7 @@ int	unsigned_int(unsigned int n, int fd)
 	i = i - 1;
 	while (i >= 0)
 	{
-		len += write(fd, &arr[i], 1);
+		len += ft_putchar_fd(arr[i], fd);
 		i--;
 	}
 	return (len);
