@@ -37,6 +37,8 @@ int ft_printf(const char *format, ...)
 {
 	int     len;
 	va_list args;
+	if(format == NULL)
+		return -1;
 	va_start(args, format);
 
 	len = 0;
@@ -46,10 +48,14 @@ int ft_printf(const char *format, ...)
 		{
 			format++;
 			len += check_character(*format, args);
+			if (len < 0)
+				return -1;
 		}
 		else if (*format != '%')
 		{
-			len += write(1, format, 1);
+			len += ft_putchar_fd(*format, 1);
+			if(len < 0)
+				return -1;
 		}
 		format++;
 	}

@@ -11,8 +11,9 @@ int main()
 
     //int i = ft_printf("%d %c %s",a, c, str);
     //int i = ft_printf("%x", a);
-    unsigned int pos = -42;
-
-    printf("\n%u", a);
+    close(1);
+    int i = printf("ayoub");
+    char j = i + 48;
+    write(2, &j, 1);
     return 0;
 }

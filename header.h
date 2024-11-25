@@ -10,6 +10,5 @@ int	ft_putchar_fd(char c, int fd);
 int	ft_putnbr_fd(int n, int fd);
 int	ft_putstr_fd(char *s, int fd);
 int	unsigned_int(unsigned int n, int fd);
-int putadr_lower(long nbr);
 int puthxs_lower(long nbr, int fd);
 #endif
