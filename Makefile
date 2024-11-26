@@ -1,6 +1,6 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = ft_putnbr_fd.c ft_putstr_fd.c ft_printf.c ft_putchar_fd.c
+SRCS = ft_putnbr_fd.c ft_putstr_fd.c ft_printf.c ft_putchar_fd.c ft_puthxs_l.c ft_unsignedint.c
 
 OBJS = $(SRCS:.c=.o)
 

@@ -1,4 +1,4 @@
-#include "header.h"
+#include "ft_printf.h"
 #include <stdio.h>
 
 int check_character(char c, va_list args)

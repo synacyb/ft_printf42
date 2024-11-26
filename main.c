@@ -1,19 +1,15 @@
-#include "header.h"
+#include "ft_printf.h"
 #include <string.h>
 #include <stdio.h>
 
-int main()
-{
-    char *str = "ayoub";
-    char *st = "hihi";
-    int a = -42;
-    char c = '*';
+int main() {
+    int number = 42;
 
-    //int i = ft_printf("%d %c %s",a, c, str);
-    //int i = ft_printf("%x", a);
-    close(1);
-    int i = printf("ayoub");
-    char j = i + 48;
-    write(2, &j, 1);
+    // Get the address of the variable
+    int *address = &number;
+
+    // Print the address in hexadecimal format using %p
+    printf("Address of number: %d\n", address);
+    printf("Address of number: %p\n", address);
     return 0;
 }

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "ft_printf.h"
 
 int	ft_putnbr_fd(int n, int fd)
 {
@@ -24,11 +24,11 @@ int	ft_putnbr_fd(int n, int fd)
 	i = 0;
 	if (num < 0)
 	{
-		len += ft_putchar_fd('-', 1);
+		len += ft_putchar_fd('-', fd);
 		num = -num;
 	}
 	else if (num == 0)
-		len += ft_putchar_fd('0', 1);
+		len += ft_putchar_fd('0', fd);
 	while (num > 0)
 	{
 		arr[i] = (num % 10) + '0';
@@ -38,7 +38,7 @@ int	ft_putnbr_fd(int n, int fd)
 	i = i - 1;
 	while (i >= 0)
 	{
-		len += ft_putchar_fd(arr[i], 1);
+		len += ft_putchar_fd(arr[i], fd);
 		i--;
 	}
 	return (len);
