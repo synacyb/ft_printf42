@@ -1,11 +1,11 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = ft_putnbr_fd.c ft_putstr_fd.c ft_printf.c ft_putchar_fd.c ft_puthxs_l.c ft_unsignedint.c
+SRCS = ft_putnbr_fd.c ft_putstr_fd.c ft_printf.c ft_putchar_fd.c ft_puthxs_l.c ft_unsignedint.c ft_puthxs_u.c
 
 OBJS = $(SRCS:.c=.o)
 
 DELETE = rm -f
-NAME = ft_printf.a
+NAME = libftprintf.a
 
 all: $(NAME)
 

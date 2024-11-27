@@ -14,7 +14,7 @@ int main() {
     // return 0;
 
 
-    int i= ft_printf("%", '5');
-    int ii = printf("%", '5');
+    int i= ft_printf("%%%c\n", '5');
+    int ii = printf("%%%c\n", '5');
     ft_printf("{%d , %d}\n", i, ii);
 }

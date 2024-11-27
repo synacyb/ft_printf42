@@ -6,7 +6,7 @@
 /*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 10:00:47 by ayadouay          #+#    #+#             */
-/*   Updated: 2024/11/24 18:29:03 by ayadouay         ###   ########.fr       */
+/*   Updated: 2024/11/27 11:08:43 by ayadouay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_putstr_fd(char *s, int fd)
 	len = 0;
 	i = 0;
 	if (s == NULL)
-		return 0;
+		s = "(null)";
 	while (s[i] != '\0')
 	{
 		len += ft_putchar_fd(s[i], fd);
