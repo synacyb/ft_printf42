@@ -1,9 +1,9 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-int check_character(char c, va_list args)
+static	int	check_character(char c, va_list args)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (c == 'c')
@@ -21,44 +21,42 @@ int check_character(char c, va_list args)
 	return (len);
 }
 
-static int valid_format(char c)
+static	int	valid_format(char c)
 {
-	int i = 0;
-	char *a = "cdisupxX%";
+	int		i;
+	char	*a;
+
+	i = 0;
+	a = "cspdiuxX%";
 	while (a[i])
 	{
 		if (c == a[i])
 			return (1);
-		i++;        
+		i++;
 	}
 	return (0);
 }
-int ft_printf(const char *format, ...)
-{
-	int     len;
-	va_list args;
-	if(format == NULL)
-		return -1;
-	va_start(args, format);
 
+int	ft_printf(const char *format, ...)
+{
+	int		len;
+	va_list	args;
+
+	va_start (args, format);
 	len = 0;
+	if (format == NULL || write(1, "", 0) == -1)
+		return (-1);
 	while (*format != '\0')
 	{
 		if (*format == '%' && valid_format(*(format + 1)) == 1)
 		{
 			format++;
 			len += check_character(*format, args);
-			if (len < 0)
-				return -1;
 		}
 		else if (*format != '%')
-		{
 			len += ft_putchar_fd(*format, 1);
-			if(len < 0)
-				return -1;
-		}
 		format++;
 	}
-	va_end(args);
+	va_end (args);
 	return (len);
 }

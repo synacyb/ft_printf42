@@ -5,7 +5,7 @@ SRCS = ft_putnbr_fd.c ft_putstr_fd.c ft_printf.c ft_putchar_fd.c ft_puthxs_l.c f
 OBJS = $(SRCS:.c=.o)
 
 DELETE = rm -f
-NAME = libftprintf.a
+NAME = ft_printf.a
 
 all: $(NAME)
 

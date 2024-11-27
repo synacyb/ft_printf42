@@ -3,13 +3,18 @@
 #include <stdio.h>
 
 int main() {
-    int number = 42;
+    // int number = 42;
 
-    // Get the address of the variable
-    int *address = &number;
+    // // Get the address of the variable
+    // int *address = &number;
 
-    // Print the address in hexadecimal format using %p
-    printf("Address of number: %d\n", address);
-    printf("Address of number: %p\n", address);
-    return 0;
+    // // Print the address in hexadecimal format using %p
+    // printf("Address of number: %d\n", address);
+    // printf("Address of number: %p\n", address);
+    // return 0;
+
+
+    int i= ft_printf("%", '5');
+    int ii = printf("%", '5');
+    ft_printf("{%d , %d}\n", i, ii);
 }
