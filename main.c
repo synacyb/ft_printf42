@@ -4,8 +4,9 @@
 
 int main()
 {
-    int i = ft_printf("%");
-    int j = printf("%");
+    int i = ft_printf(" %p %p ", 0, 0);
+    int j = printf(" %p %p ", 0, 0);
 
-    ft_printf("%d\n%d\n", i, j);
+    ft_printf("my fun : %d\noringin : %d\n", i, j);
+
 }
