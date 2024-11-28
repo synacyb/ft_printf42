@@ -4,5 +4,8 @@
 
 int main()
 {
-    
+    int i = ft_printf("%");
+    int j = printf("%");
+
+    ft_printf("%d\n%d\n", i, j);
 }
