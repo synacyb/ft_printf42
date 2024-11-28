@@ -10,7 +10,6 @@ int	unsigned_int(unsigned int n, int fd)
 	len = 0;
 	num = n;
 	i = 0;
-
 	if (num == 0)
 		len += write(fd, "0", 1);
 	while (num > 0)

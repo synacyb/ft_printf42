@@ -1,13 +1,14 @@
 #include "ft_printf.h"
 
-int puthxs_upper(unsigned int nbr, int fd)
+int	puthxs_upper(unsigned int nbr, int fd, char *str)
 {
-	char str[] = "0123456789ABCDEF";
-	char arr[18];
-	int len;
+	char	arr[18];
+	int		len;
+	int		i;
+	int		res;
 
-	int i = 0;
-	int res = 0;
+	i = 0;
+	res = 0;
 	len = 0;
 	if (nbr == 0)
 		len += ft_putchar_fd(str[0], fd);

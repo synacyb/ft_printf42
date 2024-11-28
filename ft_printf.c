@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayadouay <ayadouay@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/28 09:32:50 by ayadouay          #+#    #+#             */
+/*   Updated: 2024/11/28 09:54:14 by ayadouay         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include <stdio.h>
 
@@ -9,15 +21,15 @@ static	int	check_character(char c, va_list args)
 	if (c == 'c')
 		len += ft_putchar_fd((char)va_arg(args, int), 1);
 	else if (c == 'd' || c == 'i')
-		len += ft_putnbr_fd(va_arg(args, int), 1);
+		len += ft_putnbr_fd(va_arg(args, int), 1, 0);
 	else if (c == 'u')
 		len += unsigned_int(va_arg(args, unsigned int), 1);
 	else if (c == 's')
 		len += ft_putstr_fd(va_arg(args, char *), 1);
 	else if (c == 'x')
-		len += puthxs_lower(va_arg(args, unsigned int), 1);
+		len += puthxs_lower(va_arg(args, unsigned int), 1, "0123456789abcdef");
 	else if (c == 'X')
-		len += puthxs_upper(va_arg(args, unsigned int), 1);
+		len += puthxs_upper(va_arg(args, unsigned int), 1, "0123456789ABCDEF");
 	else if (c == 'p')
 		len += ft_putadrees(va_arg(args, unsigned long), 1, "0123456789abcdef");
 	else if (c == '%')
