@@ -35,6 +35,5 @@ int	ft_putnbr_fd(int n, int fd, int len)
 	i = i - 1;
 	while (i >= 0)
 		len += ft_putchar_fd(arr[i--], fd);
-
 	return (len);
 }

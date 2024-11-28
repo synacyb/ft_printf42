@@ -23,7 +23,7 @@ int	ft_putadrees(unsigned long nbr, int fd, char *str)
 	res = 0;
 	len = 0;
 	if (nbr == 0)
-		return (ft_putstr_fd("(nil)", fd));
+		return (ft_putstr_fd("0x0", fd));
 	while (nbr > 0)
 	{
 		res = nbr % 16;

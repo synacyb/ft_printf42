@@ -71,8 +71,8 @@ int	ft_printf(const char *format, ...)
 		}
 		else if (*format != '%')
 			len += ft_putchar_fd(*format, 1);
-		else 
-			return -1;
+		else
+			return (-1);
 		format++;
 	}
 	va_end (args);
