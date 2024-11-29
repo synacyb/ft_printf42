@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 static	int	check_character(char c, va_list args)
 {
@@ -34,23 +33,9 @@ static	int	check_character(char c, va_list args)
 		len += ft_putadrees(va_arg(args, unsigned long), 1, "0123456789abcdef");
 	else if (c == '%')
 		len += write(1, "%", 1);
+	else
+		len += (ft_putchar_fd('%', 1) + ft_putchar_fd(c, 1));
 	return (len);
-}
-
-static	int	valid_format(char c)
-{
-	int		i;
-	char	*a;
-
-	i = 0;
-	a = "cspdiuxX%";
-	while (a[i])
-	{
-		if (c == a[i])
-			return (1);
-		i++;
-	}
-	return (0);
 }
 
 int	ft_printf(const char *format, ...)
@@ -64,7 +49,7 @@ int	ft_printf(const char *format, ...)
 		return (-1);
 	while (*format != '\0')
 	{
-		if (*format == '%' && valid_format(*(format + 1)) == 1)
+		if (*format == '%' && *(format + 1))
 		{
 			format++;
 			len += check_character(*format, args);
